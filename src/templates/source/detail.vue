@@ -86,12 +86,12 @@
             {{ $page.repos.forks_count }}
           </el-col>
           <el-col :span="8" style="text-align: right">
-            <el-tag
-              size="small"
-              type="danger"
-              v-if="$page.repos.license.spdx_id"
-              >{{ $page.repos.license.spdx_id }}
-            </el-tag>
+            <!--            <el-tag-->
+            <!--              size="small"-->
+            <!--              type="danger"-->
+            <!--              v-if="$page.repos.license.spdx_id"-->
+            <!--              >{{ $page.repos.license.spdx_id }}-->
+            <!--            </el-tag>-->
             <el-tag size="small" type="success">{{
               $page.repos.language
             }}</el-tag>
@@ -124,9 +124,6 @@ query($id: ID!) {
     stargazers_count,
     watchers_count,
     forks_count,
-    license{
-      spdx_id
-    },
     language,
     created_at,
     updated_at,

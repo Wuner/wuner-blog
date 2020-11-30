@@ -84,8 +84,8 @@ export default {
     this.active = '/' + arr[1];
   },
   created() {
-    let user = sessionStorage.getItem('user');
-    let token = sessionStorage.getItem('token');
+    let user = process.isClient ? sessionStorage.getItem('user') : '{}';
+    let token = process.isClient ? sessionStorage.getItem('token') : '';
     user && (this.user = JSON.parse(user));
     token && (this.token = token);
   },

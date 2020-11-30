@@ -141,7 +141,7 @@ export default {
     return {
       user: {},
       searchKey: '',
-      token: sessionStorage.getItem('token'),
+      token: '',
     };
   },
   methods: {
@@ -196,8 +196,10 @@ export default {
     },
   },
   created() {
-    let user = sessionStorage.getItem('user');
+    let user = process.isClient ? sessionStorage.getItem('user') : '{}';
+    let token = process.isClient ? sessionStorage.getItem('token') : '';
     user && (this.user = JSON.parse(user));
+    token && (this.token = token);
   },
 };
 </script>
