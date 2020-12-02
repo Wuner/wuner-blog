@@ -61,14 +61,6 @@ query {
 </static-query>
 <script>
 export default {
-  metaInfo: {
-    meta: [
-      {
-        'http-equiv': 'Content-Security-Policy',
-        content: 'upgrade-insecure-requests',
-      },
-    ],
-  },
   data() {
     return {
       active: '',
